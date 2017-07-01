@@ -46,7 +46,7 @@ const textframe = (...args) => {
         && args[0] instanceof Array   ) {
         let k = args[0].length - 1
         let options = objectAssign({}, ...args.slice(1 + k))
-        return textframe.raw(String.raw({ raw: args[0] }, ...args.slice(1, k)), options)
+        return textframe.raw(String.raw({ raw: args[0] }, ...args.slice(1, 1 + k)), options)
     }
 
     /*  support regular usage  */
