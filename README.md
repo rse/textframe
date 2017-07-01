@@ -40,7 +40,7 @@ textframe(`
         bar
     baz
         quux
-`) -> "foo\n    bar\nbaz    quux\n"
+`) --> "foo\n    bar\nbaz    quux\n"
 
 /*  tagged template string usage  */
 const bar = "bar"
@@ -49,12 +49,12 @@ textframe`
         ${bar}
     baz
         quux
-` -> "foo\n    bar\nbaz    quux\n"
+` --> "foo\n    bar\nbaz    quux\n"
 
 /*  factory usage  */
 let tf = textframe.make({ indent: 4 })
-console.log(tf("foo")) -> "    foo\n"
-console.log(tf`foo`)   -> "    foo\n"
+console.log(tf("foo")) --> "    foo\n"
+console.log(tf`foo`)   --> "    foo\n"
 ```
 
 Application Programming Interface (API)
