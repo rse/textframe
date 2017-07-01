@@ -1,8 +1,8 @@
 {
     "name":        "textframe",
     "version":     "0.9.0",
-    "description": "Strip Unnecessary Text Indentation",
-    "keywords":    [ "strip", "indentation", "string" ],
+    "description": "Re-Frame Multi-Line Text",
+    "keywords":    [ "strip", "indentation", "text", "string" ],
     "browser":     "./lib/textframe.browser.js",
     "main":        "./lib/textframe.node.js",
     "repository": {
