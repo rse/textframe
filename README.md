@@ -34,12 +34,27 @@ Usage
 ```js
 const textframe = require("textframe")
 
+/*  direct usage  */
 textframe(`
     foo
         bar
     baz
         quux
 `) -> "foo\n    bar\nbaz    quux"
+
+/*  tagged template string usage  */
+const bar = "bar"
+textframe`
+    foo
+        ${bar}
+    baz
+        quux
+` -> "foo\n    bar\nbaz    quux"
+
+/*  factory usage  */
+let tf = textframe.make({ indent: 4 })
+console.log(tf("foo")) -> "    foo"
+console.log(tf`foo`)   -> "    foo"
 ```
 
 Application Programming Interface (API)
