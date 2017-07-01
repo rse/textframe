@@ -121,8 +121,8 @@ textframe.raw = (text, options = {}) => {
         text = newline.repeat(options.leading) + text
 
     /*  mandatory: remove trailing blank lines  */
-    text = text.replace(/([^\n])$/, "$1" + newline)
     text = text.replace(/(?: *\r?\n)+$/, "")
+    text = text.replace(/([^\n])$/, "$1" + newline)
 
     /*  optionally: add trailing blank lines  */
     if (options.trailing > 0)
