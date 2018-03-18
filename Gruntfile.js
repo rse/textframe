@@ -87,7 +87,7 @@ module.exports = function (grunt) {
             }
         },
         mochaTest: {
-            "stdarg": {
+            "textframe": {
                 src: [ "tst/*.js" ]
             },
             options: {
