@@ -1,6 +1,6 @@
 {
     "name":        "textframe",
-    "version":     "1.0.2",
+    "version":     "1.0.3",
     "description": "Re-Frame Multi-Line Text",
     "keywords":    [ "strip", "indentation", "text", "string" ],
     "browser":     "./lib/textframe.browser.js",
