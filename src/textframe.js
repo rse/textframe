@@ -44,14 +44,14 @@ const textframe = (...args) => {
     else if (args.length >= 1
         && typeof args[0] === "object"
         && args[0] instanceof Array   ) {
-        let k = args[0].length - 1
-        let options = objectAssign({}, ...args.slice(1 + k))
+        const k = args[0].length - 1
+        const options = objectAssign({}, ...args.slice(1 + k))
         return textframe.raw(String.raw({ raw: args[0] }, ...args.slice(1, 1 + k)), options)
     }
 
     /*  support regular usage  */
     else if (args.length >= 1) {
-        let options = objectAssign({}, ...args.slice(1))
+        const options = objectAssign({}, ...args.slice(1))
         return textframe.raw(args[0], options)
     }
 
@@ -75,16 +75,16 @@ textframe.raw = (text, options = {}) => {
         throw new Error("invalid input text (expected type \"string\")")
 
     /*  determine newline character sequence  */
-    let newline = text.indexOf("\r\n") >= 0 ? "\r\n" : "\n"
+    const newline = text.indexOf("\r\n") >= 0 ? "\r\n" : "\n"
 
     /*  prerequisite: expand all leading TAB characters  */
     text = text.split(newline).map((line) => {
-        let match = line.match(/^([ \t]*)(\S.*|)$/)
+        const match = line.match(/^([ \t]*)(\S.*|)$/)
         if (match !== null) {
             let [ , prefix, content ] = match
             let offset = 0
             prefix = prefix.replace(/\t/g, (_, idx) => {
-                let max = options.tabsize - (idx + offset) % options.tabsize
+                const max = options.tabsize - (idx + offset) % options.tabsize
                 offset += max - 1
                 return " ".repeat(options.tabsize).slice(0, max)
             })
@@ -97,19 +97,19 @@ textframe.raw = (text, options = {}) => {
     text = text.replace(/[ \t]+$/gm, "")
 
     /*  mandatory: reverse-indent (textframe) the text  */
-    let matches = text.match(/^ *(?=\S)/gm)
+    const matches = text.match(/^ *(?=\S)/gm)
     if (matches !== null) {
-        let indents = matches.map((match) => match.length)
-        let indent = Math.min.apply(Math, indents)
+        const indents = matches.map((match) => match.length)
+        const indent = Math.min.apply(Math, indents)
         if (indent > 0) {
-            let re = new RegExp(`^ {${indent}}`, "gm")
+            const re = new RegExp(`^ {${indent}}`, "gm")
             text = text.replace(re, "")
         }
     }
 
     /*  optionally: indent the text (again)  */
     if (options.indent > 0) {
-        let prefix = " ".repeat(options.indent)
+        const prefix = " ".repeat(options.indent)
         text = text.replace(/^(?!\s*$)/mg, prefix)
     }
 
