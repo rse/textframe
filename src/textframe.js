@@ -24,8 +24,8 @@
 
 /*  internal helper function  */
 const objectAssign = (to, ...source) => {
-    for (var i = 0; i < source.length; i++)
-        for (var key in source[i])
+    for (let i = 0; i < source.length; i++)
+        for (const key in source[i])
             if (hasOwnProperty.call(source[i], key))
                 to[key] = source[i][key]
     return to

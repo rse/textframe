@@ -26,7 +26,7 @@ const chai = require("chai")
 const { expect } = chai
 chai.config.includeStack = true
 
-var textframe = require("../lib/textframe.node.js")
+const textframe = require("../lib/textframe.node.js")
 
 describe("TextFrame Library", () => {
     it("base functionality", () => {
