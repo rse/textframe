@@ -80,7 +80,7 @@ module.exports = function (grunt) {
                     sourceMap: false,
                     presets: [ [ "@babel/preset-env", {
                         "targets": {
-                            "node": "8.0.0"
+                            "node": "18.0.0"
                         }
                     } ] ],
                     plugins: [
