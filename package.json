@@ -6,17 +6,17 @@
     "browser":     "./lib/textframe.browser.js",
     "main":        "./lib/textframe.node.js",
     "repository": {
-        "type": "git",
-        "url":  "https://github.com/rse/textframe.git"
+        "type":    "git",
+        "url":     "git+https://github.com/rse/textframe.git"
     },
     "author": {
-        "name":  "Dr. Ralf S. Engelschall",
-        "email": "rse@engelschall.com",
-        "url":   "http://engelschall.com"
+        "name":    "Dr. Ralf S. Engelschall",
+        "email":   "rse@engelschall.com",
+        "url":     "http://engelschall.com"
     },
-    "license":  "MIT",
-    "homepage": "https://github.com/rse/textframe",
-    "bugs":     "https://github.com/rse/textframe/issues",
+    "license":     "MIT",
+    "homepage":    "https://github.com/rse/textframe",
+    "bugs":        "https://github.com/rse/textframe/issues",
     "dependencies": {
     },
     "devDependencies": {
